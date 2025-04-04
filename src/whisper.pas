@@ -30,14 +30,17 @@ begin
   inherited;
 end;
 
+{$O-}
 function TWhisper.Test: TWhisperModel;
 var
   CParams: TWhisperContextParams;
   PParams: PWhisperContextParams;
 begin
   PParams := WhisperContextDefaultParams;
-  CParams := PParams;
+  CParams := PParams^;
+  FCParams := CParams;
   Result := default(TWhisperModel);
 end;
+{$O+}
 
 end.

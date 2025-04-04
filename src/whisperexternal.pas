@@ -8,7 +8,7 @@ uses
   System.Generics.Collections,
   SysUtils,
   WhisperTypes,
-  DynLib, libggml;
+  DynLib, ggmlExternal;
 
 
 var

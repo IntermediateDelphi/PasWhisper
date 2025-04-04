@@ -3,6 +3,7 @@ unit GgmlExternal;
 interface
 
 {$ALIGN 4}
+{$A+}
 
 uses
   System.Generics.Collections;

@@ -3,6 +3,7 @@ unit whispertypes;
 interface
 
 {$ALIGN 4}
+{$A+}
 {$MinEnumSize 4}
 
 uses GgmlExternal;
@@ -172,7 +173,7 @@ type
     n_loaded:   Int32;
     tensors:    Array of PggmlTensor
   end;
-  PWhisperModel = TWhisperModel;
+  PWhisperModel = ^TWhisperModel;
 
   TWhisperAlignmentHeadsPreset = (
     WHISPER_AHEADS_UNDEFIN£ED = -1,
@@ -203,8 +204,6 @@ type
     Heads: PWhisperAhead;
   end;
 
-  {$ALIGN 4}
-  {$A+}
   TWhisperContextParams = record
     use_gpu: WhisperBool;
     flash_attn: WhisperBool;
@@ -215,7 +214,7 @@ type
     dtw_aheads: TWhisperAheads;
     dtw_mem_size: UInt64; // TODO: remove
   end;
-  PWhisperContextParams = TWhisperContextParams;
+  PWhisperContextParams = ^TWhisperContextParams;
 
 
 {
